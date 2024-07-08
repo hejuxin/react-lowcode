@@ -1,0 +1,79 @@
+{
+  "cn": {
+    "decorate": {
+      "home": "首页",
+      "my": "我的",
+      "dinein": "堂食",
+      "togo": "打包",
+      "meals": "点单",
+      "mall": "商城",
+      "class": "体验课",
+      "member": "会员中心",
+      "orders": "订单",
+      "orderFood": "点餐",
+      "shopMall": "商城",
+      "pickup": "自提",
+      "delivery": "外卖",
+      "gifts": "礼品卡",
+      "scancode": "扫码点单",
+      "coupon": "优惠券",
+      "buyTogether": "拼单",
+      "integralRedeem": "积分兑换",
+      "abnormalStateNoProduct": "暂无餐品",
+      "abnormalStateNoOrder": "暂时没有订单",
+      "abnormalStateNoStoreOrder": "门店已关闭线上点单",
+      "abnormalStateNoCoupon": "暂无优惠券"
+    }
+  },
+  "us": {
+    "decorate": {
+      "home": "Home",
+      "my": "Me",
+      "dinein": "Dine In",
+      "togo": "To-Go",
+      "meals": "Menu",
+      "mall": "Mall",
+      "class": "Workshop",
+      "member": "Member Center",
+      "orders": "Orders",
+      "orderFood": "Order",
+      "shopMall": "Mall",
+      "pickup": "Pick Up",
+      "gifts": "Gift Card",
+      "scancode": "QR Code Ordering",
+      "coupon": "My Coupon",
+      "delivery": "Delivery",
+      "buyTogether": "Buy Together",
+      "integralRedeem": "Point Redeem",
+      "abnormalStateNoProduct": "No Item",
+      "abnormalStateNoOrder": "No order for now",
+      "abnormalStateNoStoreOrder": "Location Closed Online Order",
+      "abnormalStateNoCoupon": "No Coupons"
+    }
+  },
+  "de": {
+    "decorate": {
+      "home": "Home",
+      "my": "Mich",
+      "dinein": "Hier",
+      "togo": "Abholen",
+      "meals": "Menü",
+      "mall": "Shop",
+      "class": "Probekurz",
+      "member": "Mitgliederzentrum",
+      "orders": "Bestellungen",
+      "orderFood": "Bestellen",
+      "shopMall": "Einkaufszentrum",
+      "pickup": "Pick Up",
+      "gifts": "Geschenkkarte",
+      "scancode": "QR Code Ordering",
+      "coupon": "My Coupon",
+      "buyTogether": "Buy Together",
+      "integralRedeem": "Point Redeem",
+      "abnormalStateNoProduct": "No Item",
+      "abnormalStateNoOrder": "No order for now",
+      "abnormalStateNoStoreOrder": "Location Closed Online Order",
+      "abnormalStateNoCoupon": "Keine Gutscheine"
+    }
+  }
+}

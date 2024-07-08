@@ -1,0 +1,55 @@
+.home-diy-content-item {
+  // padding: 12px;
+  // padding-top: 0;
+  padding-bottom: 12px;
+  padding-right: 12px;
+  background-color: #f4f4f4;
+
+  .home-diy-item-bgs,
+  .home-diy-content-modules {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.home-diy-item-color {
+  padding-top: 12px;
+  // padding-right: 12px;
+
+  .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #161616;
+    margin-bottom: 4px;
+  }
+}
+
+.content-container-wrapper {
+  .btn-box {
+    position: absolute;
+    bottom: 0;
+
+    display: flex;
+    width: 100%;
+    margin: 0 -16px;
+
+    .btn {
+      flex: 1 1 auto;
+      background: #393939;
+      padding: 14px 16px;
+      padding-right: 0;
+
+      color: #fff;
+      font-size: 16px;
+
+      &.btn-primary {
+        background: linear-gradient(to right, #ff5151, #e00324);
+      }
+
+      &.btn-disable {
+        background: #c6c6c6;
+        color: #8d8d8d;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.content-container-wrapper {
+  position: fixed;
+  top: 124px;
+  right: 0;
+  height: calc(100vh - 124px);
+  width: 480px;
+  background-color: #fff;
+  padding: 0 16px 30px;
+  z-index: 1;
+  transition: all linear 200ms;
+  overflow: auto;
+  transform: translateY(100vh);
+
+  &.slide-in {
+    transform: translateY(0);
+  }
+
+  .content-title-wrap {
+    height: 48px;
+    margin-bottom: 16px;
+    @include flex(center, space-between, center);
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #161616;
+    }
+    .close-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+}

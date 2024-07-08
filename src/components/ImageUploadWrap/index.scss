@@ -1,0 +1,56 @@
+.image-upload-wrap {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-left: 15px;
+  margin-top: 16px;
+  .dt-ui-image-uploader {
+    width: 100%;
+    height: 100%;
+
+    .dt-ui-image-uploader-area {
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+    }
+  }
+
+  .close-x {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 26px;
+    z-index: 1;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #525252;
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 14px;
+      display: inline-block;
+      background-color: #fff;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      top: 4px;
+      left: 9px;
+    }
+
+    &::after {
+      content: '';
+      width: 2px;
+      height: 14px;
+      display: inline-block;
+      background-color: #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 4px;
+      left: 9px;
+    }
+  }
+}

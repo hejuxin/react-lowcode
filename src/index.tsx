@@ -34,6 +34,7 @@ const getAntdLocale = () => {
 //   </React.StrictMode>
 // );
 
+window.bo = 'cn'
 i18nInstance.then(() => {
   root.render(
     <ConfigProvider locale={zhCN as any}>

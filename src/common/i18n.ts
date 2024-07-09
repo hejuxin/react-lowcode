@@ -6,7 +6,6 @@ import zhCn from '../assets/i18n/zh-CN.json'
 import deDe from '../assets/i18n/de-DE.json'
 import boConfig from '../assets/i18n/bo-config.json'
 import { isObject } from 'lodash'
-import { bo } from '.'
 
 const langMap: {
   [key: string]: string;
@@ -94,7 +93,7 @@ window.i18n = i18n
 // 根据bo 输出对应的语言
 window.i18n.tbo = (key: string) => {
   const arr = key?.split('.')
-  const config: any = boConfig[bo]
+  const config: any = boConfig[window.bo]
   return config[arr[0]] && isObject(config[arr[0]]) ? config[arr[0]][arr[1]] : config[arr[0]]
 }
 

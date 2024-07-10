@@ -1,3 +1,7 @@
 @import '../iconfont/iconfont.css';
 
 $drThemeBgColor: var(--dr-theme-bg-color, #ebebeb);
+
+div {
+  box-sizing: border-box;
+}

@@ -1,0 +1,156 @@
+$dt-prefix: 'dt-ui';
+$image-uploader-prefix-cls: $dt-prefix + '-image-uploader';
+
+// 组件的最基本颜色
+$bg-01: #fff;
+$bg-02: #f4f4f4;
+.#{$image-uploader-prefix-cls} {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.disable {
+    .upload-img-area {
+      input {
+        cursor: inherit;
+      }
+      &:hover {
+        .img-mask {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .#{$image-uploader-prefix-cls + -area} {
+    width: 120px;
+    height: 120px;
+    background: $bg-02;
+    color: #000;
+    border-radius: 3px;
+    // overflow: hidden;
+    position: relative;
+    .image-delete {
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      color: #fff;
+      background-color: #da1e28;
+      border-radius: 50%;
+      font-size: 20px;
+      line-height: 0;
+      cursor: pointer;
+    }
+    .upload-img {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        display: block;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .img-mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+      flex-direction: column;
+      span {
+        color: $bg-01;
+        font-size: 14px;
+        line-height: 16px;
+        display: inline-block;
+        margin-top: 19px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+    input {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      &:disabled {
+        cursor: unset;
+      }
+    }
+    &:hover {
+      .img-mask {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.#{$image-uploader-prefix-cls + -clip} {
+  width: 100%;
+  min-height: 285px;
+  overflow: hidden;
+  & > img {
+    width: auto;
+    height: auto;
+  }
+  .crop-handle {
+    width: 414px;
+    height: auto;
+    float: left;
+    img {
+      width: 100%;
+    }
+    .change-clip-radio-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 16px;
+      width: 340px;
+      >span {
+        display: flex;
+        align-items: flex-end;
+      }
+      .ant-radio-checked, .ant-radio-inner {
+        border-color: #161616;
+        &::after {
+          border: #161616;
+          background-color: #161616;
+        }
+      }
+      .radio-list {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+  .crop-view {
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+    position: relative;
+    h3 {
+      display: inline-block;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

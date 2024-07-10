@@ -24,3 +24,21 @@ export const removeVideo = (index?: number) => {
     })
   }
 }
+
+/**
+ * 设置css3变量
+ * @param {string} selector - 元素选择器
+ * @param {Record<string, any>} cssMap - 设置的css3变量
+ */
+export function setCSSProperty (selector: string, cssMap: Record<string, any> = {}) {
+  // const webApp = ['hqtop', 'handtop']
+  // 兼容hqtop项目
+  // if (webApp.includes((window as any)?.Config?.APP)) {
+  const ele = document.querySelector(selector) as any
+  Object.keys(cssMap).forEach((key) => {
+      ele?.style?.setProperty?.(key, cssMap[key])
+  })
+
+  // return
+  // }
+}

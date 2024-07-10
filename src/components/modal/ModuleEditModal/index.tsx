@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Input } from 'antd';
+import { Button, Input } from 'antd';
 import { WrapContainer, ContentWrapper, WrapUpload } from '../..'
-// import BrandStoryIntroModal from '@pages/mobile/decoration/modal/BrandStoryIntroModal'
+import BrandStoryIntroModal from '../../BrandStoryIntroModal'
 import './index.scss'
 interface IProps {
   visible: boolean
@@ -104,15 +104,15 @@ const ModuleEditModal: React.FC<IProps> = props => {
               ) : radio === 'imgUrl' ? (
                 <WrapContainer title18='customLink' subtitle18='customLink'>
                   <Input value={moduleInfo?.typeExtraContent?.url} onChange={(e) => handleTypeExtraChange('url', 'fontSize', e.target.value)} />
-                  <p className='content-title-sub' onClick={() => {
+                  <Button type='link' className='content-title-sub' onClick={() => {
                     setAddModalVisible(true)
-                  }}>{i18n.t('decorate.WrapContainerSub.customCopyLinkDsc')}</p>
-                  {/* {
+                  }}>{i18n.t('decorate.contentItemSub.customCopyLinkDsc')}</Button>
+                  {
                     addModalVisible && (<BrandStoryIntroModal
                       visible={addModalVisible}
                       handleCancel={() => setAddModalVisible(false)}
                     />)
-                  } */}
+                  }
                 </WrapContainer>
               ) : <></>
             }

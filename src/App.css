@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -35,4 +35,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  height: 100vh;
+}
+
+.config {
+  float: right;
+  width: 480px;
+  height: 100%;
+}
+
+.preview {
+  overflow: hidden;
+  transform: scale(.6);
 }

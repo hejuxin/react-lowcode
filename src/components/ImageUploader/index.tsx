@@ -7,6 +7,8 @@ import zhCN from '../../assets/locales/zh-CN';
 import deDE from '../../assets/locales/de-DE';
 import Icon from './Icons';
 import ImageClipModal, { Crop } from './ImageClipModal';
+import './index.scss';
+import { fetchFileUpload } from '../../services/file';
 
 const codeMap = {
   'zh-cn': zhCN,
@@ -84,8 +86,6 @@ const ImageUploader: React.FC<ImageUploaderProps> = (props) => {
       : accept.split(',').map(type => 'image/' + type).join(', ')
     : 'image/jpeg, image/png, image/gif, image/bmp');
   const [imgInfo, setImageInfo] = useState('image/png');
-  /** TODO: 2022-1-10 与张超多次确认之后，删除upload接品，所有图片上传都用ProductUpload接口 */
-  const uploadUrl = `${host}/imageUpload/productUpload`;
   // const uploadUrl =
   //   extraData.type === 'product'
   //     ? `${host}/imageUpload/productUpload`
@@ -146,25 +146,33 @@ const ImageUploader: React.FC<ImageUploaderProps> = (props) => {
 
   const performUpload = (file: any, fileGenre = 'image') => {
     const reqData = new FormData();
-    reqData.append('file', file);
-    reqData.append('type', fileGenre === 'video' ? 'video' : extraData.type ? extraData.type : 'image');
-    if (extraData.brandId) {
-      reqData.append('brandId', String(extraData.brandId));
-    }
-    if (extraData.storeId) {
-      reqData.append('storeId', String(extraData.storeId));
-    }
-    axios
-      .post(uploadUrl, reqData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          token: extraData.token,
-        },
-      })
-      .then((res: any) => {
+    reqData.append('smfile', file);
+    // reqData.append('type', fileGenre === 'video' ? 'video' : extraData.type ? extraData.type : 'image');
+    // if (extraData.brandId) {
+    //   reqData.append('brandId', String(extraData.brandId));
+    // }
+    // if (extraData.storeId) {
+    //   reqData.append('storeId', String(extraData.storeId));
+    // }
+
+    fetchFileUpload(reqData).then((res: any) => {
         res = res.data || res;
-        if (res.result.content.length) {
-          const picInfo = res.result.content[res.result.content.length - 1];
+        // if (res.result.content.length) {
+        //   const picInfo = res.result.content[res.result.content.length - 1];
+        //   onChange({
+        //     url: picInfo.url,
+        //     type: fileGenre === 'video' ? 'video' : extraData.type ? extraData.type : 'image',
+        //     vurl: picInfo.ETag || picInfo.etag,
+        //     info: {
+        //       height: picInfo.height,
+        //       width: picInfo.width,
+        //       name: file.name,
+        //     },
+        //   });
+        //   setImageUrl(fileGenre === 'video' ? picInfo.ETag || picInfo.etag : picInfo.url);
+        // }
+        if (res) {
+          const picInfo = res.data;
           onChange({
             url: picInfo.url,
             type: fileGenre === 'video' ? 'video' : extraData.type ? extraData.type : 'image',

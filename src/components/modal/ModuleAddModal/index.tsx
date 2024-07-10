@@ -134,10 +134,8 @@ const ModuleAddModal: React.FC<IProps> = props => {
   }
 
   const handleSureBtnClick = () => {
-    console.log('handleSureBtnClick')
     if (!disable) {
       const value = getDefaultValue()
-      console.log(value)
       onOk(value)
     }
   }
@@ -176,7 +174,7 @@ const ModuleAddModal: React.FC<IProps> = props => {
     <ContentWrapper isShow={visible} handleCancel={handleCancel} wrapClassName='diy-content'>
       <Tabs className="top-tabs" activeKey={tab} onChange={handleTopTabsChange} >
         {
-          (['entry', 'member', 'extend'].filter(Boolean) as IDiyModuleTab[]).map(tab => {
+          (['entry', 'extend'].filter(Boolean) as IDiyModuleTab[]).map(tab => {
             return (
               <Tabs.TabPane key={tab} tab={getTabName(tab)}>
                 <WrapContainer title18='moduleName' tooltip={tooltip()} tooltipIcon='icon-information'>

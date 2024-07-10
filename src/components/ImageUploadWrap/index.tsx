@@ -1,6 +1,7 @@
 import React from 'react'
 import { ImageUploader } from '../';
 import './index.scss'
+import { HOST } from '../../services/host';
 
 interface IProps {
   notShowImage?: boolean
@@ -24,7 +25,7 @@ const ImageUploadWrap: React.FC<IProps> = props => {
         onChange={(info: any) => onChange(value ? 'replace' : 'add', info)}
         value={value}
         // todo
-        host={''}
+        host={HOST}
         extraData={{
           type: 'product',
           brandId: localStorage.getItem('ls.lastBrandId'),

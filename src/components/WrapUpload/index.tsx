@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle, useMemo, ForwardRefRenderFunction } from 'react'
 import { Spin } from 'antd';
 import { WrapItemBlock } from '..'
-import UploadApi from '../../api/upload.api'
 import './index.scss'
+import { fetchFileUpload } from '../../services/file';
 interface IProps {
   accept?: string[]
   max?: number
@@ -41,16 +41,18 @@ const WrapUpload: ForwardRefRenderFunction<unknown, IProps> = (props, ref) => {
     formData.append('file', file)
     formData.append('type', file.type === 'video/mp4' ? 'video' : 'product')
     formData.append('brandId', localStorage.getItem('ls.lastBrandId') || '')
-    UploadApi.productUpload(formData).then((res: any) => {
+    fetchFileUpload(formData).then((res: any) => {
       const { error, result } = res
       setLoading(false)
       if (!error) {
-        if (result.content?.length) {
-          const mediaContent = result.content[0]
-          const mediaUrl = mediaContent?.url
-          setUrl(mediaUrl)
-          onChange && onChange({ type: fileType, url: mediaUrl, width: mediaContent?.width || null, height: mediaContent?.height || null })
-        }
+        // if (result.content?.length) {
+        //   const mediaContent = result.content[0]
+        //   const mediaUrl = mediaContent?.url
+        //   setUrl(mediaUrl)
+        //   onChange && onChange({ type: fileType, url: mediaUrl, width: mediaContent?.width || null, height: mediaContent?.height || null })
+        // }
+        // todo 视频上传
+        console.log(result, 'result')
       }
     })
   }

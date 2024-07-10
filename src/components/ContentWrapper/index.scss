@@ -1,8 +1,10 @@
 .content-container-wrapper {
+  --top: 0;
   position: fixed;
-  top: 124px;
+  top: var(--top);
   right: 0;
-  height: calc(100vh - 124px);
+  // height: calc(100vh - var(--top));
+  height: 100vh;
   width: 480px;
   background-color: #fff;
   padding: 0 16px 30px;
@@ -10,6 +12,7 @@
   transition: all linear 200ms;
   overflow: auto;
   transform: translateY(100vh);
+  box-sizing: border-box;
 
   &.slide-in {
     transform: translateY(0);
@@ -18,7 +21,9 @@
   .content-title-wrap {
     height: 48px;
     margin-bottom: 16px;
-    @include flex(center, space-between, center);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .title {
       font-size: 14px;
       font-weight: 600;

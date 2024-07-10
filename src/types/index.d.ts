@@ -46,4 +46,24 @@ declare module 'antd/es/locale-provider/LocaleReceiver';
 
 interface Window {
   i18n: any;
+  bo: 'cn'
+}
+
+
+interface ITabItem {
+  type: string;
+  name: any;
+  icon: string;
+  pic: string;
+  activePic: string;
+  isShow: number;
+  mode: number;
+}
+
+interface ITabbarConfig {
+  tabs: ITabItem[];
+  enableName: number;
+  enablePosition: number;
+  backgroundColor: string;
+  pagesShow: Record<string, number>
 }

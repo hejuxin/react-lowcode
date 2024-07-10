@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import HomeDiyItem from './components/HomeDiyContent';
 import { removeVideo } from './utils';
+import HomeReviewDiy from './components/HomeReviewDiy';
 
 const defalutData = {
   backgroundImages: [],
@@ -18,14 +19,29 @@ function App() {
   }
   return (
     <div className="App">
-      <HomeDiyItem
-        value={data}
-        tabMode='brandCode'
-        onSetData={handleDataChange}
-        moduleIndex={diyModuleIndex}
-        onModuleIndexChange={setDiyModuleIndex}
-        removeVideo={removeVideo}
-      />
+
+      <div className='config'>
+        <HomeDiyItem
+          value={data}
+          tabMode='brandCode'
+          onSetData={handleDataChange}
+          moduleIndex={diyModuleIndex}
+          onModuleIndexChange={setDiyModuleIndex}
+          removeVideo={removeVideo}
+        />
+      </div>
+      <div className='preview'>
+        {/* todo preview content */}
+        <HomeReviewDiy
+          value={data}
+          onSetData={handleDataChange}
+          isBrand
+          type='brandCode'
+          wxAmpLinkList={[]}
+          moduleIndex={diyModuleIndex}
+          onModuleIndexChange={(index: number) => setDiyModuleIndex(index)}
+        />
+      </div>
     </div>
   );
 }

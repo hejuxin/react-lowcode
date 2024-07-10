@@ -1,7 +1,8 @@
-import { bo } from "../common"
+
 
 // 装修首页快捷入口列表
 export const getHomeEntriesArr = (tabMode: ITabMode) => {
+  const bo = window.bo;
   // let arr = []
   if (tabMode === 'brandCode') {
     return ['dinein', 'delivery', 'pickup', bo === 'cn' && 'scancode', 'orders', 'member', 'integralRedeem', 'coupon', bo === 'cn' && 'mall'].filter(Boolean)

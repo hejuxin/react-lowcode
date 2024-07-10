@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
-import { ModuleAddModal, ModuleEditModal } from '../modal'
-import { deepClone } from '../../utils'
+import { ModuleAddModal, ModuleEditModal } from '@/features'
+import { ColorInput, ImageUploadWrap, ModuleItem, CollapseWrap } from '@/components'
+import { deepClone } from '@/utils'
 import { pick } from 'lodash'
 import { Tooltip } from 'antd'
 import './index.scss'
-import { ColorInput, ImageUploadWrap, ModuleItem, CollapseWrap } from '../../components'
 interface IProps {
   value: IHomeDiyDetailItem
   onSetData: (value: IHomeDiyDetailItem) => void

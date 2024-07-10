@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { Button, Input } from 'antd';
-import { WrapContainer, ContentWrapper, WrapUpload } from '../../../components'
-import BrandStoryIntroModal from '../../BrandStoryIntroModal'
+import { WrapContainer, ContentWrapper, WrapUpload } from '@/components'
+import BrandStoryIntroModal from '@/features/BrandStoryIntroModal'
 import './index.scss'
 interface IProps {
   visible: boolean

@@ -13,18 +13,6 @@ export const deepClone = (obj: any) => {
       : clone;
 };
 
-export const removeVideo = (index?: number) => {
-  const videoList: any = document.querySelector('.diy-video-list')
-  if (index) {
-    const video: any = document.getElementById(`video${index}`)
-    videoList.removeChild(video)
-  } else {
-    videoList.childNodes.forEach((child: any) => {
-      videoList.removeChild(child)
-    })
-  }
-}
-
 /**
  * 设置css3变量
  * @param {string} selector - 元素选择器

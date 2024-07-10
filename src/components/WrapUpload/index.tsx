@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle, us
 import { Spin } from 'antd';
 import { WrapItemBlock } from '..'
 import './index.scss'
-import { fetchFileUpload } from '../../services/file';
+import { fetchFileUpload } from '@/services/file';
 interface IProps {
   accept?: string[]
   max?: number

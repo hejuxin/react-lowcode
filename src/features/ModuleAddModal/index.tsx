@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { Tabs, Input, Radio, Tooltip, Button } from 'antd';
-import { getHomeEntriesArr, getHomeEntriesItemDisable } from '../../../utils/decoration'
-import { WrapContainer, ContentWrapper } from '../../../components'
+import { getHomeEntriesArr, getHomeEntriesItemDisable } from '@/utils/decoration'
+import { WrapContainer, ContentWrapper } from '@/components'
 import './index.scss'
 import classNames from 'classnames';
 interface IProps {

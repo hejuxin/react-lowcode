@@ -1,7 +1,7 @@
 import React from 'react'
 import { ImageUploader } from '../';
 import './index.scss'
-import { HOST } from '../../services/host';
+import { HOST } from '@/services/host';
 
 interface IProps {
   notShowImage?: boolean

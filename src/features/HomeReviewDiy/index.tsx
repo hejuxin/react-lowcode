@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import classNames from 'classnames'
 import './index.scss'
-import { deepClone, setCSSProperty } from '../../utils'
+import { deepClone, setCSSProperty } from '@/utils'
 // import { MemberCard } from '@/pages/mobile/decoration/components'
 // import { toPrice } from '@/utils/format/price'
 import { isNumber } from 'lodash'

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactCrop from 'react-image-crop';
 import { Modal, Radio } from 'antd';
-import enUS from '../../assets/locales/en-US';
-import zhCN from '../../assets/locales/zh-CN';
-import deDE from '../../assets/locales/de-DE';
+import enUS from '@/assets/locales/en-US';
+import zhCN from '@/assets/locales/zh-CN';
+import deDE from '@/assets/locales/de-DE';
 import 'react-image-crop/dist/ReactCrop.css';
 
 export interface Crop {

@@ -38,7 +38,11 @@ function App() {
     const textarea = (textareaRef.current as any)!.resizableTextArea.textArea;
     const value = JSON.parse(textarea.value);
 
-    setData(value)
+    setData({
+      backgroundColor: value.backgroundColor || '#fff',
+      modules: value.modules || [],
+      backgroundImages: value.backgroundImages || []
+    })
     modalParams.hideModal();
   }
 

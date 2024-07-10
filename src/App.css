@@ -43,13 +43,23 @@
 
 .config {
   float: right;
-  width: 480px;
+  /* width: 480px; */
+  width: 50%;
+  max-width: 480px;
   height: 100%;
+
+  border-left: 1px solid #d6d6d6;
+  padding: 16px;
 }
 
 .preview-wrap {
+  height: 100%;
   overflow: hidden;
 }
 .preview {
   transform: scale(.6);
+}
+
+.textarea {
+  min-height: 220px !important;
 }

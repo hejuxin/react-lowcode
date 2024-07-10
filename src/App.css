@@ -47,7 +47,9 @@
   height: 100%;
 }
 
-.preview {
+.preview-wrap {
   overflow: hidden;
+}
+.preview {
   transform: scale(.6);
 }

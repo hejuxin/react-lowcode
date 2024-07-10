@@ -4,20 +4,31 @@ import { deepClone } from '../../utils'
 import { pick } from 'lodash'
 import { Tooltip } from 'antd'
 import './index.scss'
-import { ColorInput, ImageUploadWrap, ModuleItem, CollapseWrap } from '..'
+import { ColorInput, ImageUploadWrap, ModuleItem, CollapseWrap } from '../../components'
 interface IProps {
   value: IHomeDiyDetailItem
   onSetData: (value: IHomeDiyDetailItem) => void
   moduleIndex: number
   onModuleIndexChange: (index: number) => void
   tabMode: ITabMode
-  removeVideo: (index?: number) => void
 }
 
 type TAction = 'add' | 'del' | 'replace'
 
+const removeVideo = (index?: number) => {
+  const videoList: any = document.querySelector('.diy-video-list')
+  if (index) {
+    const video: any = document.getElementById(`video${index}`)
+    videoList.removeChild(video)
+  } else {
+    videoList.childNodes.forEach((child: any) => {
+      videoList.removeChild(child)
+    })
+  }
+}
+
 const HomeDiyItem: React.FC<IProps> = props => {
-  const { value, onSetData, moduleIndex, onModuleIndexChange, tabMode, removeVideo } = props
+  const { value, onSetData, moduleIndex, onModuleIndexChange, tabMode } = props
   const [addVisible, setAddVisible] = useState<boolean>(false)
   const [editVisible, setEditVisible] = useState<boolean>(false)
   const images = useMemo(() => {

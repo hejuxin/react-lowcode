@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+import Editor from './features/HomeDiyContent';
+import PreviewContent from './features/HomeReviewDiy';
+import OperateContent from './features/OperateContent';
 import './App.css';
-import HomeDiyItem from './components/HomeDiyContent';
-import { removeVideo } from './utils';
-import HomeReviewDiy from './components/HomeReviewDiy';
 
 const defalutData = {
   backgroundImages: [],
@@ -21,26 +20,27 @@ function App() {
     <div className="App">
 
       <div className='config'>
-        <HomeDiyItem
+        <Editor
           value={data}
           tabMode='brandCode'
           onSetData={handleDataChange}
           moduleIndex={diyModuleIndex}
           onModuleIndexChange={setDiyModuleIndex}
-          removeVideo={removeVideo}
         />
       </div>
-      <div className='preview'>
-        {/* todo preview content */}
-        <HomeReviewDiy
-          value={data}
-          onSetData={handleDataChange}
-          isBrand
-          type='brandCode'
-          wxAmpLinkList={[]}
-          moduleIndex={diyModuleIndex}
-          onModuleIndexChange={(index: number) => setDiyModuleIndex(index)}
-        />
+      <div className='preview-wrap'>
+        <OperateContent />
+        <div className='preview'>
+          <PreviewContent
+            value={data}
+            onSetData={handleDataChange}
+            isBrand
+            type='brandCode'
+            wxAmpLinkList={[]}
+            moduleIndex={diyModuleIndex}
+            onModuleIndexChange={(index: number) => setDiyModuleIndex(index)}
+          />
+        </div>
       </div>
     </div>
   );
